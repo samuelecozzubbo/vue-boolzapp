@@ -9,6 +9,7 @@
 :root {
     --border-color: lime;
     --padding: 20px 10px;
+    --color: #B1B1B1;
   }
 
 .wrapper{
@@ -53,7 +54,7 @@ header{
         display: flex;
         align-items: center;
         gap: 20px;
-        color: #B1B1B1;
+        color: var(--color);
         font-size: larger;
         padding: var(--padding);
     }
@@ -76,7 +77,7 @@ header{
 .left-nav{
     flex-basis: 0;
     flex-grow: 1;
-    background-color: rgb(255, 127, 127);
+    background-color: #F9F9F9;
     border: solid 1px;
     border-color: var(--border-color);
 }
@@ -95,6 +96,29 @@ header{
         border-radius: 50%;
         padding: 10px;
         margin-right: 10px;
+    }
+    
+    /* Searching bar */
+    .searching-bar{
+        display: flex;
+        flex-basis: 0;
+        padding: 10px 8px;
+    }
+
+    /* Search-icon */
+    .search-icon{
+        color: var(--color);
+        background-color: white;
+        padding: 10px 20px;
+        border: solid 1px;
+        border-color: var(--border-color);
+    }
+    /* Search-input */
+    .search-input{
+        padding: 10px;
+        flex-grow: 1;
+        border: solid 1px;
+        border-color: var(--border-color);
     }
 
 /* Chat aperta */
