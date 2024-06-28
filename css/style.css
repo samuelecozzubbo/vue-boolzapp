@@ -8,6 +8,7 @@
 
 :root {
     --border-color: lime;
+    --padding: 0 10px;
   }
 
 .wrapper{
@@ -15,6 +16,11 @@
     height: 100vh;
     background-color: midnightblue;
     padding-top: 50px;
+}
+
+.avatarImg{
+    max-width: 40px;
+    border-radius: 50%;
 }
 
 /* Regole header */
@@ -32,7 +38,24 @@ header{
     flex-grow: 1;
     border: solid 1px;
     border-color: var(--border-color);
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+    /* Utente loggato */
+    .logged-user{
+        display: flex;
+        align-items: center;
+    }
+    /* Nav-icons */
+    .nav-icons{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: #B1B1B1;
+        font-size: larger;
+    }
 
 .current-chat-menu{
     flex-basis: 0;
@@ -55,6 +78,7 @@ header{
     background-color: rgb(255, 127, 127);
     border: solid 1px;
     border-color: var(--border-color);
+    padding: var(--padding);
 }
     /* Chat aperta */
 .current-chat-app{

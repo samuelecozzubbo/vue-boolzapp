@@ -22,7 +22,15 @@
         <header>
             <!-- Menu Profilo utente -->
             <div class="current-user-menu">
-
+                <div class="logged-user">
+                    <img class="avatarImg" :src="user.avatar" alt="userImage">
+                    <span>{{user.name}}</span>
+                </div>
+                <div class="nav-icons">
+                    <i class="fa-solid fa-circle-notch"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
             </div>
             <!-- Menu chat aperta -->
             <div class="current-chat-menu">
