@@ -5,3 +5,62 @@
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
 }
+
+:root {
+    --border-color: lime;
+  }
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: midnightblue;
+    padding-top: 50px;
+}
+
+/* Regole header */
+header{
+    width: 100%;
+    height: 50px;
+    background-color: #EAEAEA;
+    display: flex;
+    position: fixed;
+    top: 0;
+}
+
+.current-user-menu{
+    flex-basis: 0;
+    flex-grow: 1;
+    border: solid 1px;
+    border-color: var(--border-color);
+}
+
+.current-chat-menu{
+    flex-basis: 0;
+    flex-grow: 2;
+    border: solid 1px;
+    border-color: var(--border-color);
+}
+
+/* Regole app wrapper */
+.app-wrapper{
+    width: 100vw;
+    height: calc(100vh - 50px);
+    background-color: darkcyan;
+    display: flex;
+}
+    /* Menu navigazione contatti */
+.left-nav{
+    flex-basis: 0;
+    flex-grow: 1;
+    background-color: rgb(255, 127, 127);
+    border: solid 1px;
+    border-color: var(--border-color);
+}
+    /* Chat aperta */
+.current-chat-app{
+    flex-basis: 0;
+    flex-grow: 2;
+    background-color: rgb(77, 77, 255);
+    border: solid 1px;
+    border-color: var(--border-color);
+}
