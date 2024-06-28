@@ -8,7 +8,7 @@
 
 :root {
     --border-color: lime;
-    --padding: 0 10px;
+    --padding: 20px 10px;
   }
 
 .wrapper{
@@ -38,7 +38,6 @@ header{
     flex-grow: 1;
     border: solid 1px;
     border-color: var(--border-color);
-    padding: var(--padding);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,6 +46,7 @@ header{
     .logged-user{
         display: flex;
         align-items: center;
+        padding: var(--padding);
     }
     /* Nav-icons */
     .nav-icons{
@@ -55,6 +55,7 @@ header{
         gap: 20px;
         color: #B1B1B1;
         font-size: larger;
+        padding: var(--padding);
     }
 
 .current-chat-menu{
@@ -71,16 +72,32 @@ header{
     background-color: darkcyan;
     display: flex;
 }
-    /* Menu navigazione contatti */
+/* Menu navigazione contatti */
 .left-nav{
     flex-basis: 0;
     flex-grow: 1;
     background-color: rgb(255, 127, 127);
     border: solid 1px;
     border-color: var(--border-color);
-    padding: var(--padding);
 }
-    /* Chat aperta */
+
+    /* Popup */
+    .pop-up{
+        background-color: #8EDAFC;
+        padding: var(--padding);
+    }
+
+    .popup-icon{
+        color: #8EDAFC;
+        background-color: #F2FBFF;
+        float: left;
+        font-size: 1.5em;
+        border-radius: 50%;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+/* Chat aperta */
 .current-chat-app{
     flex-basis: 0;
     flex-grow: 2;
