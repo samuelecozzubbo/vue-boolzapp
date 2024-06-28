@@ -34,7 +34,20 @@
             </div>
             <!-- Menu chat aperta -->
             <div class="current-chat-menu">
-
+                <div class="current-user-chat">
+                    <div class="avatar">
+                        <img class="avatarImg" :src="contacts[0].avatar" alt="avatar">
+                    </div>
+                    <div class="message-info">
+                        <div class="message-sender">{{contacts[0].name}}</div>
+                        <div class="message-content">Ultimo messaggio inviato alle 12.00</div>
+                    </div>
+                    <div class="current-chat-icons nav-icons">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
             </div>
         </header>
         <div class="app-wrapper">
@@ -66,7 +79,13 @@
                  
             </div>
             <div class="current-chat-app">
-                
+                <div class="chat-container">
+                    <div class="message recived">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci quia doloremque reprehenderit! Quas optio odio, modi ratione enim aspernatur officiis deserunt similique labore hic fugiat voluptate dicta minima, quam molestiae?</div>
+                    <div class="message send">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nisi repellendus eius expedita tempora culpa consequatur! Tempore molestias quasi quam odio? Ea, rem. Expedita nemo cupiditate quasi facilis impedit sapiente.</div>
+                </div>
+                <div class="nav-chat">
+                    
+                </div>
             </div>
         </div>
         

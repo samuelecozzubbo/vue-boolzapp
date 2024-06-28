@@ -7,7 +7,7 @@
 }
 
 :root {
-    --border-color: lime;
+    --border-color: lightgray;
     --padding: 20px 10px;
     --color: #B1B1B1;
   }
@@ -40,7 +40,7 @@ header{
     position: fixed;
     top: 0;
 }
-
+/* Current user */
 .current-user-menu{
     flex-basis: 0;
     flex-grow: 1;
@@ -62,16 +62,22 @@ header{
         align-items: center;
         gap: 20px;
         color: var(--color);
-        font-size: larger;
-        padding: var(--padding);
+        padding-right: 10px;
     }
-
+/* Current open chat */
 .current-chat-menu{
     flex-basis: 0;
     flex-grow: 2;
     border: solid 1px;
     border-color: var(--border-color);
 }
+
+    /* current-chat-user */
+    .current-user-chat{
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+    }
 
 /* Regole app wrapper */
 .app-wrapper{
@@ -151,7 +157,45 @@ header{
 .current-chat-app{
     flex-basis: 0;
     flex-grow: 2;
-    background-color: rgb(77, 77, 255);
+    background-image: url('../img/background.png');
+    background-repeat: repeat;
+    background-size: contain;
     border: solid 1px;
     border-color: var(--border-color);
+    overflow-y: auto;
+    position: relative;
 }
+    /* chat-nav */
+    .nav-chat{
+        width: 100%;
+        height: 50px;
+        background-color: white;
+        opacity: 0.5;
+        position: fixed;
+        bottom: 0;
+    }
+
+    /* chat container */
+    .chat-container{
+        max-width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .message{
+        max-width: 70%;
+        padding: 10px 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .recived{
+        background-color: white;
+    }
+
+    .send{
+        align-self: flex-end;
+        background-color: #D5F9BA;
+    }
