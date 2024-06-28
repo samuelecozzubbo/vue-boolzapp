@@ -52,15 +52,15 @@
                  </div>
                  <!-- Contacts list -->
                   <ul>
-                    <li class="contact">
+                    <li class="contact" v-for="(contact,i) in contacts">
                         <div class="avatar">
-                            <img class="contactImg" src="img/avatar_1.jpg" alt="avatar">
+                            <img class="contactImg" :src="contact.avatar" alt="avatar">
                         </div>
                         <div class="message-info">
-                            <div class="message-sender">Nome Utente</div>
+                            <div class="message-sender">{{contact.name}}</div>
                             <div class="message-content">Ultimo messaggio inviato</div>
                         </div>
-                        <div class="message-time">10:30</div>
+                        <div class="message-time">12.00</div>
                     </li>
                   </ul>
                  
