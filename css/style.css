@@ -22,6 +22,13 @@
 .avatarImg{
     max-width: 40px;
     border-radius: 50%;
+    display: inline-block;
+}
+
+.contactImg{
+    max-width: 60px;
+    border-radius: 50%;
+    display: inline-block;
 }
 
 /* Regole header */
@@ -88,15 +95,15 @@ header{
         padding: var(--padding);
     }
 
-    .popup-icon{
-        color: #8EDAFC;
-        background-color: #F2FBFF;
-        float: left;
-        font-size: 1.5em;
-        border-radius: 50%;
-        padding: 10px;
-        margin-right: 10px;
-    }
+        .popup-icon{
+            color: #8EDAFC;
+            background-color: #F2FBFF;
+            float: left;
+            font-size: 1.5em;
+            border-radius: 50%;
+            padding: 10px;
+            margin-right: 10px;
+        }
     
     /* Searching bar */
     .searching-bar{
@@ -105,21 +112,40 @@ header{
         padding: 10px 8px;
     }
 
-    /* Search-icon */
-    .search-icon{
-        color: var(--color);
-        background-color: white;
-        padding: 10px 20px;
-        border: solid 1px;
+        /* Search-icon */
+        .search-icon{
+            color: var(--color);
+            background-color: white;
+            padding: 10px 20px;
+            border: solid 1px;
+            border-color: var(--border-color);
+        }
+        /* Search-input */
+        .search-input{
+            padding: 10px;
+            flex-grow: 1;
+            border: solid 1px;
+            border-color: var(--border-color);
+        }
+    
+    /* Contacts list */
+    .contact{
+        display: flex;
+        border: 1px solid;
         border-color: var(--border-color);
-    }
-    /* Search-input */
-    .search-input{
         padding: 10px;
-        flex-grow: 1;
-        border: solid 1px;
-        border-color: var(--border-color);
     }
+
+    .message-info {
+        flex-grow: 1;
+        margin-left: 20px;
+    }
+
+    .message-time,.message-content {
+        font-size: 0.8em;
+        color: var(--color);
+    }
+
 
 /* Chat aperta */
 .current-chat-app{
