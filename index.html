@@ -36,10 +36,10 @@
             <div class="current-chat-menu">
                 <div class="current-user-chat">
                     <div class="avatar">
-                        <img class="avatarImg" :src="contacts[0].avatar" alt="avatar">
+                        <img class="avatarImg" :src="selectedContact.avatar" alt="avatar">
                     </div>
                     <div class="message-info">
-                        <div class="message-sender">{{contacts[0].name}}</div>
+                        <div class="message-sender">{{selectedContact.name}}</div>
                         <div class="message-content">Ultimo messaggio inviato alle 12.00</div>
                     </div>
                     <div class="current-chat-icons nav-icons">
@@ -65,13 +65,13 @@
                  </div>
                  <!-- Contacts list -->
                   <ul>
-                    <li class="contact" v-for="(contact,i) in contacts">
+                    <li class="contact" v-for="(contact,i) in contacts" :key="i" @click="selectContacts(contact)" :class="{active: selectedContact === contact }">
                         <div class="avatar">
                             <img class="contactImg" :src="contact.avatar" alt="avatar">
                         </div>
                         <div class="message-info">
-                            <div class="message-sender">{{contact.name}}</div>
-                            <div class="message-content">Ultimo messaggio inviato</div>
+                            <div class="sender-name">{{contact.name}}</div>
+                            <div class="sender-last-message">Ultimo messaggio inviato</div>
                         </div>
                         <div class="message-time">12.00</div>
                     </li>
@@ -80,8 +80,17 @@
             </div>
             <div class="current-chat-app">
                 <div class="chat-container">
-                    <div class="message recived">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci quia doloremque reprehenderit! Quas optio odio, modi ratione enim aspernatur officiis deserunt similique labore hic fugiat voluptate dicta minima, quam molestiae?</div>
-                    <div class="message send">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad nisi repellendus eius expedita tempora culpa consequatur! Tempore molestias quasi quam odio? Ea, rem. Expedita nemo cupiditate quasi facilis impedit sapiente.</div>
+                    <div class="message" :class="message.status" 
+                    v-for="(message, index) in selectedContact.messages" 
+                    :key="index">
+                    <div class="message-content">
+                        {{message.message}}
+                    </div>
+                    <div class="message-time">
+                        {{message.date}}
+                    </div>
+                    
+                    </div>
                 </div>
                 <div class="nav-chat">
                     <i style="color: gray;" class="fa-regular fa-face-smile"></i>

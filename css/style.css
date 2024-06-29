@@ -31,7 +31,9 @@
     display: inline-block;
 }
 
-/* Regole header */
+/*************
+Regole header 
+*************/
 header{
     width: 100%;
     height: 50px;
@@ -79,12 +81,15 @@ header{
         padding: 5px 10px;
     }
 
-/* Regole app wrapper */
+/********************
+Regole app wrapper 
+********************/
 .app-wrapper{
     width: 100vw;
     height: calc(100vh - 50px);
     background-color: darkcyan;
     display: flex;
+    position: relative;
 }
 /* Menu navigazione contatti */
 .left-nav{
@@ -147,9 +152,24 @@ header{
         margin-left: 20px;
     }
 
-    .message-time,.message-content {
+    .sender-name,.sender-last-message,.message-time {
         font-size: 0.8em;
         color: var(--color);
+    }
+
+    /* Effetto hover per il contatto */
+    .contact:hover {
+        background-color: lightgray;
+    }
+
+    /* Stile per il contatto attivo */
+    .contact.active {
+        background-color: gray;
+    }
+
+    /* Rimuovi l'effetto hover per il contatto attivo */
+    .contact.active:hover {
+        background-color: gray;
     }
 
 
@@ -165,13 +185,14 @@ header{
     overflow-y: auto;
     position: relative;
 }
+
     /* chat-nav */
     .nav-chat{
-        width: 100%;
+        width: calc(100% / 3 * 2);
         height: 70px;
         background-color: rgb(255, 255, 255 ,0.5);
         font-size: 1.5em;
-        position: absolute;
+        position: fixed;
         bottom: 0;
         display: flex;
         flex-direction: row;
@@ -204,11 +225,11 @@ header{
         margin-bottom: 10px;
     }
 
-    .recived{
+    .received{
         background-color: white;
     }
 
-    .send{
+    .sent{
         align-self: flex-end;
         background-color: #D5F9BA;
     }

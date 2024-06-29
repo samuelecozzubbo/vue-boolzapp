@@ -3,6 +3,8 @@ const { createApp } = Vue ;
 createApp( {   
     data() {   
         return {
+            selectedContact:'',
+            currentMessageTime:'',
             user: {
                 name: 'Samuele',
                 avatar: 'img/useravatar.jpg',
@@ -174,6 +176,10 @@ createApp( {
         }
     },
     methods: {
+        selectContacts(contact){
+            this.selectedContact = contact;
+            console.log(this.selectedContact);
+        }
     },
     mounted() {
         console.log("the component is now mounted");
