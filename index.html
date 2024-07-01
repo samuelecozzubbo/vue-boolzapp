@@ -39,8 +39,8 @@
                         <img class="avatarImg" :src="selectedContact.avatar" alt="avatar">
                     </div>
                     <div class="message-info">
-                        <div class="message-sender">{{selectedContact.name}}</div>
-                        <div class="message-content">Ultimo messaggio inviato alle 12.00</div>
+                        <div class="sender-name">{{selectedContact.name}}</div>
+                        <div class="sender-last-message">Ultimo messaggio inviato alle 12.00</div>
                     </div>
                     <div class="current-chat-icons nav-icons">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -94,7 +94,7 @@
                 </div>
                 <div class="nav-chat">
                     <i style="color: gray;" class="fa-regular fa-face-smile"></i>
-                    <input class="new-message" type="text" placeholder="Scrivi un messaggio">
+                    <input v-model="newMessage" class="new-message" type="text" placeholder="Scrivi un messaggio" @keyup.enter="addMessage()">
                     <i style="color: gray;" class="fa-solid fa-microphone"></i>
                 </div>
             </div>

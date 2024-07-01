@@ -5,6 +5,7 @@ createApp( {
         return {
             selectedContact:'',
             currentMessageTime:'',
+            newMessage: '',
             user: {
                 name: 'Samuele',
                 avatar: 'img/useravatar.jpg',
@@ -179,6 +180,15 @@ createApp( {
         selectContacts(contact){
             this.selectedContact = contact;
             console.log(this.selectedContact);
+            this.addMessage(contact.message);
+        },
+        addMessage(message){
+            if(this.newMessage){
+                console.log(this.newMessage);
+                this.selectedContact.messages.push({date:new Date().toLocaleString(),message:this.newMessage,status:'sent'});
+                this.newMessage = "";
+            }
+            
         }
     },
     mounted() {

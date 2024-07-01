@@ -152,7 +152,7 @@ Regole app wrapper
         margin-left: 20px;
     }
 
-    .sender-name,.sender-last-message,.message-time {
+    .sender-last-message,.message-time {
         font-size: 0.8em;
         color: var(--color);
     }
