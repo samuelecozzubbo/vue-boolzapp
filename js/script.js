@@ -6,6 +6,7 @@ createApp( {
             selectedContact:'',
             currentMessageTime:'',
             newMessage: '',
+            filteredContact:'',
             user: {
                 name: 'Samuele',
                 avatar: 'img/useravatar.jpg',
@@ -207,6 +208,16 @@ createApp( {
             const splitDate = dataString.split(' ')[1];
             return splitDate.slice(0,5);
           },
+        searchFilter(){
+            const search = this.filteredContact.toLowerCase();
+            this.contacts.forEach(contact => {
+                if(contact.name.toLowerCase().includes(search)){
+                    contact.visible = true;
+                }else{
+                    contact.visible = false;
+                };
+        });
+        },
     },
     mounted() {
         console.log("the component is now mounted");

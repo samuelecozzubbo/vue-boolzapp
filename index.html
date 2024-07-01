@@ -61,11 +61,11 @@
                  <!-- Searching bar -->
                  <div class="searching-bar">
                     <i class="search-icon fa-solid fa-magnifying-glass"></i>
-                    <input class="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input @input="searchFilter" v-model="filteredContact" class="search-input" type="text" placeholder="Cerca o inizia una nuova chat">
                  </div>
                  <!-- Contacts list -->
                   <ul>
-                    <li class="contact" v-for="(contact,i) in contacts" :key="i" @click="selectContacts(contact)" :class="{active: selectedContact === contact }">
+                    <li class="contact" v-show="contact.visible" v-for="(contact,i) in contacts" :key="i" @click="selectContacts(contact)" :class="{active: selectedContact === contact }">
                         <div class="avatar">
                             <img class="contactImg" :src="contact.avatar" alt="avatar">
                         </div>
@@ -86,7 +86,7 @@
                     <div class="message-content">
                         {{message.message}}
                     </div>
-                    <div class="message-time">
+                    <div class="message-time" style="text-align: end;">
                         {{dateSplit(message.date)}}
                     </div>
                     
