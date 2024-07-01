@@ -220,9 +220,13 @@ createApp( {
         },
         openDropdown(index) {
             this.selectedContact.messages.forEach((message, i) => {
-                
                 if (i === index) {
-                    message.showDropdown = true;
+                    if(message.showDropdown === undefined){
+                        message.showDropdown = true;
+                    }else{
+                        message.showDropdown = undefined;
+                    }
+                    
                 } else {
                     message.showDropdown = false;
                 }
