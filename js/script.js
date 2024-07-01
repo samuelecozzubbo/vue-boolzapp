@@ -234,6 +234,14 @@ createApp( {
         },
         deleteMessage(index){
             this.selectedContact.messages.splice(index, 1);
+        },
+        lastMessage(contact){
+            const lastMessage = contact.messages[contact.messages.length - 1].message;
+            return lastMessage;
+        },
+        lastMessageHour(contact){
+            const lastMessageHour = contact.messages[contact.messages.length - 1].date;
+            return lastMessageHour;
         }
     },
     mounted() {

@@ -71,9 +71,9 @@
                         </div>
                         <div class="message-info">
                             <div class="sender-name">{{contact.name}}</div>
-                            <div class="sender-last-message">Ultimo messaggio inviato</div>
+                            <div class="sender-last-message">{{lastMessage(contact)}}</div>
                         </div>
-                        <div class="message-time">12.00</div>
+                        <div class="message-time">{{lastMessageHour(contact)}}</div>
                     </li>
                   </ul>
                  
