@@ -218,6 +218,16 @@ createApp( {
                 };
         });
         },
+        openDropdown(index) {
+            this.selectedContact.messages.forEach((message, i) => {
+                
+                if (i === index) {
+                    message.showDropdown = true;
+                } else {
+                    message.showDropdown = false;
+                }
+            });
+        },
     },
     mounted() {
         console.log("the component is now mounted");

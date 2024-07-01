@@ -223,6 +223,7 @@ Regole app wrapper
         padding: 10px 15px;
         border-radius: 10px;
         margin-bottom: 10px;
+        position: relative;
     }
 
     .received{
@@ -233,3 +234,28 @@ Regole app wrapper
         align-self: flex-end;
         background-color: #D5F9BA;
     }
+
+
+/* DROPDOWN */
+.dropdown {
+    position: absolute;
+    top: 0;
+    right: 1%;
+    color: #B1B1B1;
+    font-size: 0.8em;
+    display: none;
+}
+
+.message:hover .dropdown{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-content{
+    position: absolute;
+    background-color: white;
+    font-size: 1.2em;
+    color: black;
+    width: 150px;
+    padding: 10px;
+}

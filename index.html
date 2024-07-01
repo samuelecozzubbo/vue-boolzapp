@@ -83,19 +83,26 @@
                     <div class="message" :class="message.status" 
                     v-for="(message, index) in selectedContact.messages" 
                     :key="index">
-                    <div class="message-content">
-                        {{message.message}}
-                    </div>
-                    <div class="message-time" style="text-align: end;">
-                        {{dateSplit(message.date)}}
-                    </div>
+                        <div class="message-content">
+                            {{message.message}}
+                        </div>
+                        <div class="message-time" style="text-align: end;">
+                            {{dateSplit(message.date)}}
+                        </div>
+                        <div class="dropdown">
+                            <i @click="openDropdown(index)" class="fa-solid fa-chevron-down"></i>
+                            <div v-show="message.showDropdown" class="dropdown-content">
+                                <div>Message info</div>
+                                <div>Delete message</div>
+                            </div>
+                        </div>
                     
                     </div>
                 </div>
                 <div class="nav-chat">
                     <i style="color: gray;" class="fa-regular fa-face-smile"></i>
                     <input v-model="newMessage" class="new-message" type="text" placeholder="Scrivi un messaggio" @keyup.enter="addMessage()">
-                    <i style="color: gray;" class="fa-solid fa-microphone"></i>
+                    <i style="color: rgb(52, 39, 39);" class="fa-solid fa-microphone"></i>
                 </div>
             </div>
         </div>
