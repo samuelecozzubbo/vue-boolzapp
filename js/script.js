@@ -232,6 +232,9 @@ createApp( {
                 }
             });
         },
+        deleteMessage(index){
+            this.selectedContact.messages.splice(index, 1);
+        }
     },
     mounted() {
         console.log("the component is now mounted");

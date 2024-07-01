@@ -93,7 +93,7 @@
                             <i @click="openDropdown(index)" class="fa-solid fa-chevron-down"></i>
                             <div v-show="message.showDropdown" class="dropdown-content">
                                 <div>Message info</div>
-                                <div>Delete message</div>
+                                <div @click="deleteMessage(index)">Delete message</div>
                             </div>
                         </div>
                     
