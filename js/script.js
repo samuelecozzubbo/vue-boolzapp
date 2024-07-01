@@ -177,19 +177,36 @@ createApp( {
         }
     },
     methods: {
+        //seleziona contatto
         selectContacts(contact){
             this.selectedContact = contact;
             console.log(this.selectedContact);
             this.addMessage(contact.message);
         },
-        addMessage(message){
+        addMessage(){
+            //Aggiunta di un nuovo messaggio al contatto selezionato
             if(this.newMessage){
                 console.log(this.newMessage);
                 this.selectedContact.messages.push({date:new Date().toLocaleString(),message:this.newMessage,status:'sent'});
                 this.newMessage = "";
+                //Risposta automatca
+                setTimeout(() => {
+                    const replyMsg = {
+                        date: new Date().toLocaleString(),
+                        message: 'ok',
+                        status: 'received'
+                    };
+                    this.selectedContact.messages.push(replyMsg);
+                }, 1000);
+                
             }
             
-        }
+        },
+        dateSplit(dataString) {
+            //Splitto stringa date per prelevare solo l'ora
+            const splitDate = dataString.split(' ')[1];
+            return splitDate.slice(0,5);
+          },
     },
     mounted() {
         console.log("the component is now mounted");
