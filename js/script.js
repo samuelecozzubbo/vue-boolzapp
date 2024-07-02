@@ -7,6 +7,7 @@ createApp( {
             currentMessageTime:'',
             newMessage: '',
             filteredContact:'',
+            replyMsgRandom:'',
             user: {
                 name: 'Samuele',
                 avatar: 'img/useravatar.jpg',
@@ -192,9 +193,15 @@ createApp( {
                 this.newMessage = "";
                 //Risposta automatca
                 setTimeout(() => {
+                    axios.get('https://flynn.boolean.careers/exercises/api/random/sentence')
+                        .then((response) => { 
+                            const result = response.data.response; 
+                            this.replyMsgRandom = result;
+                            console.log(result);
+                        });
                     const replyMsg = {
                         date: new Date().toLocaleString(),
-                        message: 'ok',
+                        message: this.replyMsgRandom,
                         status: 'received'
                     };
                     this.selectedContact.messages.push(replyMsg);
